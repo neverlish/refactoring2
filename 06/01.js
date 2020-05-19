@@ -1,17 +1,21 @@
 // 06 기본적인 리팩터링 - 01 함수 추출하기
 
 function printOwing(invoice) {
-  let outstanding = 0;
 
   printBanner();
 
-  // 미해결 채무(outstanding)를 계산한다.
-  for (const o of invoice.orders) {
-    outstanding += o.amount;
-  }
+  const outstanding = calculateOutstanding(invoice);
 
   recordDueDate(invoice);
   printDetails(invoice, outstanding);
+}
+
+function calculateOutstanding(invoice) {
+  let result = 0;
+  for (const o of invoice.orders) {
+    result += o.amount;
+  }
+  return result;
 }
 
 function printBanner() {
