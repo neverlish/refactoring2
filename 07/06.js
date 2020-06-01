@@ -23,6 +23,9 @@ class Shipment {
     this._trackingInformation.shippingCompany = arg;
   }
 
+  set trackingNumber(arg) {
+    this._trackingInformation.trackingNumber = arg;
+  }
 }
 
 const trackingInformation = new TrackingInformation();
