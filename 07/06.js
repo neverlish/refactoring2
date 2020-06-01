@@ -1,8 +1,6 @@
 // 07 캡슐화 - 06 클래스 인라인하기
 
 class TrackingInformation {
-  get trackingNumber() { return this._trackingNumber; }
-  set trackingNumber(arg) { this._trackingNumber = arg; }
   get display() {
     return `${this.shippingCompany}: ${this.trackingNumber}`;
   }
@@ -23,6 +21,7 @@ class Shipment {
     this._trackingInformation.shippingCompany = arg;
   }
 
+  get trackingNumber() { return this._trackingInformation.trackingNumber; }
   set trackingNumber(arg) {
     this._trackingInformation.trackingNumber = arg;
   }
