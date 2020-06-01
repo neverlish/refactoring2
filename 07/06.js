@@ -2,7 +2,6 @@
 
 class TrackingInformation {
   get shippingCompany() { return this._shippingCompany; } // 배송 회사
-  set shippingCompany(arg) { this._shippingCompany = arg; }
   get trackingNumber() { return this._trackingNumber; }
   set trackingNumber(arg) { this._trackingNumber = arg; }
   get display() {
@@ -19,10 +18,14 @@ class Shipment {
   set trackingInformation(aTrackingInformation) {
     this._trackingInformation = aTrackingInformation;
   }
+
+  set shippingCompany(arg) {
+    this._trackingInformation.shippingCompany = arg;
+  }
 }
 
 const trackingInformation = new TrackingInformation();
 const aShipment = new Shipment();
 aShipment.trackingInformation = trackingInformation;
 
-aShipment.trackingInformation.shippingCompany = 'VENDOR';
+aShipment.shippingCompany = 'VENDOR';
