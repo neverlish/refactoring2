@@ -1,14 +1,8 @@
 // 07 캡슐화 - 06 클래스 인라인하기
 
-class TrackingInformation {
-  get display() {
-    return `${this.shippingCompany}: ${this.trackingNumber}`;
-  }
-}
-
 class Shipment {
   get trackingInfo() {
-    return this._trackingInformation.display;
+    return `${this.shippingCompany}: ${this.trackingNumber}`;
   }
 
   get trackingInformation() { return this._trackingInformation; }
@@ -27,8 +21,7 @@ class Shipment {
   }
 }
 
-const trackingInformation = new TrackingInformation();
 const aShipment = new Shipment();
-aShipment.trackingInformation = trackingInformation;
+aShipment.trackingInformation = {};
 
 aShipment.shippingCompany = 'VENDOR';
