@@ -2,7 +2,7 @@
 
 function trackSummary(points) {
   const totalTime = calculateTime();
-  const totalDistance = calculateDistance();
+  const totalDistance = top_calculateDistance(points);
   const pace = totalTime / 60 / totalDistance;
 
   return {
@@ -10,10 +10,6 @@ function trackSummary(points) {
     distance: totalDistance,
     pace: pace
   };
-
-  function calculateDistance() { // 총 거리 계산
-    return top_calculateDistance(points)
-  }
 
   function calculateTime() { } // 총 시간 계산
 }
