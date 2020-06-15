@@ -12,14 +12,7 @@ function trackSummary(points) {
   };
 
   function calculateDistance() { // 총 거리 계산
-    let result = 0;
-    for (let i = 1; i < points.length; i++) {
-      result += distance(points[i - 1], points[i]);
-    }
-    return result;
-
-    function distance(p1, p2) { }
-    function radians(degress) { }
+    return top_calculateDistance(points)
   }
 
   function calculateTime() { } // 총 시간 계산
