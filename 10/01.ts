@@ -20,7 +20,7 @@ function getCharge(aDate: IDate, plan: IPlan, quantity: number) {
   if (summer())
     charge = summerCharge();
   else
-    charge = quantity * plan.regularRate + plan.regularServiceCharge;
+    charge = regularCharge();
 
   return charge;
 
@@ -30,5 +30,9 @@ function getCharge(aDate: IDate, plan: IPlan, quantity: number) {
 
   function summerCharge() {
     return quantity * plan.summerRate;
+  }
+
+  function regularCharge() {
+    return quantity * plan.regularRate + plan.regularServiceCharge;
   }
 }
