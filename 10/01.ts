@@ -15,12 +15,8 @@ interface IPlan {
   regularServiceCharge: number;
 }
 
-function getCharge(aDate: IDate, plan: IPlan, quantity: number) {
-  let charge;
-  if (summer())
-    charge = summerCharge();
-  else
-    charge = regularCharge();
+function getCharge(aDate: IDate, plan: IPlan, quantity: number): number {
+  const charge = summer() ? summerCharge() : regularCharge();
 
   return charge;
 
