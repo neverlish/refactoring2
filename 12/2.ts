@@ -1,11 +1,11 @@
 class Employee {
-
+  private name: string;
 }
 
 class SalesPerson extends Employee {
-  private name: string;
+
 }
 
 class Engineer extends Employee {
-  private name: string;
+
 }
