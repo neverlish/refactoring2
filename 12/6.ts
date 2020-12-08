@@ -13,5 +13,7 @@ class Employee {
       throw new Error(`${arg}라는 직원 유형은 없습니다.`);
   }
 
-  toString() { return `${this._type} ${this._type}`; }
+  get type() { return this._type; }
+
+  toString() { return `${this._type} ${this.type}`; }
 }
