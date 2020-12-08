@@ -1,9 +1,9 @@
 class Employee {
-  private quote: string;
+
 }
 
 class SalesPerson extends Employee {
-
+  protected quote: string;
 }
 
 class Engineer extends Employee {
